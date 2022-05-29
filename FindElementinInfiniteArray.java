@@ -11,10 +11,11 @@ public class FindElementinInfiniteArray {
     public static int Search(int[] arr, int target) {
         int start = 0;
         int end = 1;
+
         while (target > arr[end]) {
             if (target > arr[end]) {
 
-                start = end;
+                start = end+1;
                 end = 2 * start;
                 continue;
 
