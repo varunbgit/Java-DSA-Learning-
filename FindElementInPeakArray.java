@@ -18,6 +18,8 @@ public class FindElementInPeakArray {
     //One important Point you might have missed
     //What if the element is not present in Ascending Part of Array but is Present in Desending part of array
 
+    //We Can Also Use ognostic  Binary Search Function
+
     public static int IndexSearch(int [] arr, int target) {
         int start = 0;
         int end = Peakelement(arr);
