@@ -17,18 +17,28 @@ public class Firstbadversion {
         int start =0 ;
         int end = n;
 
-        while (start <= end){
+        while (start < end){            //if approach1 start<=end
             int mid = start + (end-start)/2;
+//            Approach 1
+//            if(isBadVersion(mid)){
+//                if(isBadVersion(mid-1)){
+//                    end = mid-1;
+//                }else{
+//                    return mid;
+//                }
+//            }else{
+//                start = mid+1;
+//            }
             if(isBadVersion(mid)){
-                if(isBadVersion(mid-1)){
-                    end = mid-1;
-                }else{
-                    return mid;
-                }
-            }else{
+                end =mid;
+            }
+            else{
                 start = mid+1;
             }
+
         }
-        return  -1;
+       // return  -1;
+        //if apporach 1
+        return end;
     }
 }
