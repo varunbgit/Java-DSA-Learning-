@@ -11,7 +11,7 @@ public class BSearch2DarraySortedFashion {
                 {9,10,11,12},
                 {13,14,15,16}
         };
-        int target = 11;
+        int target = 10;
         System.out.println(Arrays.toString(Search(matrix,target)));
     }
     public static int [] Bsearch(int arr[][],int row,int cStart,int cEnd,int target){
@@ -29,20 +29,24 @@ public class BSearch2DarraySortedFashion {
 
         return new int[]{-1,-1};
     }
+
     public static int [] Search (int [] [] arr,int target){
-        int rowStart = 0;
-        int rowEnd = arr[0].length-1;
+        int rows = arr.length;
+        int cols= arr[0].length;
 
-        int colStart = 0;
-        int colEnd = arr.length;
-        int colMid = (colStart+colEnd)/2 ;
-
+//        int colStart = 0;
+//        int colEnd = cols-1;
+        int colMid = cols/2 ;
+        int rowStart =0;
+        int rowEnd =rows-1;
         //check if this is a 1D Array
-        if(colEnd ==1 ){
-            return Bsearch(arr,rowStart,colStart,colEnd,target);
+
+
+        if(rows ==1 ){
+            return Bsearch(arr,0,0,cols-1,target);
         }
         //reducing the rows to 2 .
-         while(colStart > colEnd){
+         while(rowStart<(rowEnd -1)){  // this is true means more than 2 rows remaining
              //Binary search in the mid column
 
              int rowMid = (rowEnd+rowStart)/2;
@@ -59,7 +63,8 @@ public class BSearch2DarraySortedFashion {
          }
 
          // now only 2 rows are remaining
-        if(rowStart-rowEnd==1){ //Remaining 2 rows are adjacent
+
+         //Remaining 2 rows are adjacent
             //check the middle column
             if(target == arr[rowStart][colMid]){ //checking the mid element of first row
                 return new int[]{rowStart,colMid};
@@ -74,19 +79,19 @@ public class BSearch2DarraySortedFashion {
                 return Bsearch(arr,rowStart,0,colMid-1,target);
             }
             //part2
-            if(target >= arr[rowStart][colMid+1] && target <= arr[rowStart+1][colMid-1]) {
-                return Bsearch(arr,rowStart,colMid+1,colEnd,target);
+            if(target >= arr[rowStart][colMid+1] && target <= arr[rowStart][cols-1]) {
+                return Bsearch(arr,rowStart,colMid+1,cols-1,target);
             }
             //part3
             if(target <= arr[rowStart+1][colMid -1]){
                 return Bsearch(arr,rowStart+1,0,colMid-1,target);
             }
             //part4
-                else{
-                    return Bsearch(arr,rowStart+1,colMid+1,colEnd,target);
-                }
-        }
-        return new int[] {-1,-1};
+            else{
+                    return Bsearch(arr,rowStart+1,colMid+1,cols-1,target);
+            }
+
+
     }
 
 
