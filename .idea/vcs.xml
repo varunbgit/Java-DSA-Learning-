@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Array Assignments/src/com/varun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BinarySearchProblems/src/com/varun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Functions/src/com/varun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Search Assignments/src/com/varun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Sorting Assignments/src/com/varun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Sorting Fundamental Codes/src/com/varun" vcs="Git" />
+  </component>
+</project>
