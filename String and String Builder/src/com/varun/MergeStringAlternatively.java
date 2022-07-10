@@ -18,10 +18,10 @@ public class MergeStringAlternatively {
             ans.append(word2.charAt(i));
         }
         if(word1.length()>word2.length()){
-            ans.append(word1.substring(i+1)); // if only one argument is passed then it takes string from index passes to last
+            ans.append(word1.substring(i)); // if only one argument is passed then it takes string from index passes to last
         }
         if(word1.length()<word2.length()){
-            ans.append(word2.substring(i+1));// if only one argument is passed then it takes string from index passes to last
+            ans.append(word2.substring(i));// if only one argument is passed then it takes string from index passes to last
         }
         return ans.toString();
 
