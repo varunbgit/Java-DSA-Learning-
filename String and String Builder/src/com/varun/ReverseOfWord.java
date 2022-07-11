@@ -4,14 +4,14 @@ package com.varun;
 
 public class ReverseOfWord {
     public static void main(String[] args) {
-        String word = "abcdefd";
-        char ch = 'd';
+        String word = "abcd";
+        char ch = 'z';
         System.out.println(reversePrefix(word,ch));
     }
     public static String reversePrefix(String word, char ch) {
         int index =0;
         StringBuilder ans = new StringBuilder();
-        while(true){
+        while(index<word.length()){
             if(word.charAt(index) == ch){
                 for (int i =index; i >=0 ; i--) {
                     ans.append(word.charAt(i));
@@ -20,6 +20,9 @@ public class ReverseOfWord {
             }else{
                 index++;
             }
+        }
+        if(index==word.length()){
+            return word;
         }
         for (int i =index+1; i <word.length();i++) {
             ans.append(word.charAt(i));
