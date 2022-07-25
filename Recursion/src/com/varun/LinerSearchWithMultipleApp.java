@@ -28,7 +28,6 @@ public class LinerSearchWithMultipleApp {
          search(arr,key,index+1);
 
     }
-
     //what if we don't want to make a static list outside the function
 
 
@@ -47,19 +46,6 @@ public class LinerSearchWithMultipleApp {
         return search2(arr,key,index+1,list);
     }
 
-    private static ArrayList<Integer> search3(int [] arr ,int key,int index){
-        ArrayList<Integer> list = new ArrayList<>();
 
-        if(index== arr.length){
-            return list;
-        }
-        if(index == key ){
-            list.add(index);
-        }
 
-           ArrayList<Integer> ansfrombelow = search3(arr,key,index+1);
-           list.addAll(ansfrombelow);
-           return list;
-
-    }
 }
