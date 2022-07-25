@@ -47,5 +47,20 @@ public class LinerSearchWithMultipleApp {
     }
 
 
+    private static ArrayList<Integer> search3(int [] arr ,int key,int index){
+        ArrayList<Integer> list = new ArrayList<>();
+
+        if(index== arr.length){
+            return list;
+        }
+        if(index == key ){
+            list.add(index);
+        }
+
+        ArrayList<Integer> ansfrombelow = search3(arr,key,index+1);
+        list.addAll(ansfrombelow);
+        return list;
+
+    }
 
 }
