@@ -38,39 +38,40 @@ public class SpecialFibo {
 
     }
 
-//    static int spFibo(int a,int b,int n){
-//        int [] ans = new int[n];
-//
-//        if(ans[n-1] == 0){
-//            ans[n-1] = find(a,b,n);
-//        }
-//
-////
-//        return ans[n-2] ^ ans[n-3]; //because index is always 1 less
-//
-//    }
-//    static int find(int a,int b,int n){
-//        if(n==0){
-//            return a;
-//        }
-//        if (n == 1) {
-//            return b;
-//        }
-//        return find(a,b,n-1) ^ find(a,b,n-2);
-//
-//    }
-        static int spFibo(int a,int b,int n){
-        //using top to bottom approach
+    static int spFibo(int a,int b,int n){
 
-            int [] arr = new int[n];
-            arr[0] = a;
-            arr[1] = b;
-
-            for(int i=2;i<n;i++){
-                arr[i] = arr[i-1] ^ arr[i-2];
-            }
-
-            return arr[n-1];
-
+        /*
+        write some basic test cases on paper and we will find like
+        if n %3 ==0 ans =a;
+                ==1 ans =b;
+                ==2 ans =a ^ b;
+         */
+        if(n%3 == 0){
+            return a ;
         }
+        if(n%3 ==1){
+            return b;
+        }
+        return a^b;
+    }
+
+
+
+
+
+
+//        static int spFibo(int a,int b,int n){
+//        //using top to bottom approach
+//
+//            int [] arr = new int[n];
+//            arr[0] = a;
+//            arr[1] = b;
+//
+//            for(int i=2;i<n;i++){
+//                arr[i] = arr[i-1] ^ arr[i-2];
+//            }
+//
+//            return arr[n-1];
+//
+//        }
 }
