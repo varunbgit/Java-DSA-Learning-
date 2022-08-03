@@ -3,14 +3,14 @@ package com.varun;
 
 public class FindLenghtofStringusingRecursion {
     public static void main(String[] args) {
-        String s  = "Varun";
+        String s  = "Rajputsinghsanu";
         int ans = recLen(s);
         System.out.println(ans);
     }
 
     private static int recLen(String s) {
 
-        if(s == null){
+        if(s == ""){
             return 0;
         }
         StringBuilder nstr = new StringBuilder();
