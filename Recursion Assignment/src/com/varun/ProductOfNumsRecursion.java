@@ -12,9 +12,10 @@ public class ProductOfNumsRecursion {
         // Assuming x is greater and  y is smaller
 
         if(x > y){
-            int temp = x;
-            x= y;
-            y = temp;
+//            int temp = x;
+//            x= y;
+//            y = temp;
+            return product(y,x);
         }
         if(x==0 || y==0){
             return 0;
