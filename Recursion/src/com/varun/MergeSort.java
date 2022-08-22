@@ -5,9 +5,72 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int [] arr = {5,3,1,4,7};
-        int [] ans = sort(arr);
-        System.out.println(Arrays.toString(ans));
+//        sort(arr);
+        inplaceSort(arr,0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
+
+    public static void inplaceSort(int [] arr ,int start,int end){
+
+        if(end-start ==1){
+            return ;
+        }
+        int mid = (start+end)/2;
+        //
+         inplaceSort(arr,0,mid);
+         inplaceSort(arr,mid,end);
+
+         inplaceMerge(arr,start,mid,end);
+
+    }
+    public static void inplaceMerge(int []arr,int start,int mid ,int end){
+        int[] mix =new int[end-start];
+
+        int i=start;
+        int j=mid;
+        int k=0;
+
+
+        while(i< mid  && j< end ){
+            if(arr[i]<arr[j]){
+                mix[k] = arr[i];
+                k++;
+                i++;
+            }else{
+                mix[k] = arr[j];
+                k++;
+                j++;
+            }
+        }
+
+        // one array get empty and other still contains ele
+
+        while(i< mid){
+            mix[k] = arr[i];
+            k++;
+            i++;
+        }
+        while(j < end){
+            mix[k] = arr[j];
+            k++;
+            j++;
+        }
+
+        for ( k = 0; k < mix.length; k++) {
+            arr[start+k] = mix[k];
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public static int[] sort(int [] arr ){
 
