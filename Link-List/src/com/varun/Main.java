@@ -16,5 +16,7 @@ public class Main {
         list.displayList();
         list.insertAtPos(3,7);
         list.displayList();
+        list.deletefirst();
+        list.displayList();
     }
 }

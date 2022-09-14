@@ -93,4 +93,12 @@ public class LinkList {
         size++;
     }
 
+    //deletion starts heree
+
+    public int deletefirst(){
+        int value = head.value;;
+        head = head.next;
+        return value;
+    }
+
 }
