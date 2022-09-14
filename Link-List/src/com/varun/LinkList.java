@@ -85,6 +85,9 @@ public class LinkList {
         for (int i = 0; i <pos-1 ; i++) {
             temp= temp.next;
         }
+        // Approach 2
+//        Node nodee = new node(value,temp.next)//we already have a constructor that attaches the node.next
+        // to the passed next nodee value;
         node.next = temp.next;
         temp.next = node;
         size++;
