@@ -92,13 +92,15 @@ public class LinkList {
         temp.next = node;
         size++;
     }
-
+    public Node get(int index){
+        Node node = new Node();
+        node =head;
+        for (int i = 0; i < index-1; i++) {
+            node = node.next;
+        }
+        return node;
+    }
     //deletion starts heree
 
-    public int deletefirst(){
-        int value = head.value;;
-        head = head.next;
-        return value;
-    }
 
 }
