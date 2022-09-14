@@ -14,5 +14,7 @@ public class Main {
         list.displayList();
         list.insertAtLast(25);
         list.displayList();
+        list.insertAtPos(3,7);
+        list.displayList();
     }
 }

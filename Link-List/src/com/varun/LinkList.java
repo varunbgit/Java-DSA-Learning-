@@ -17,6 +17,7 @@ public class LinkList {
     private class Node{
         private int value;
         private Node next;
+        public Node(){}
 
         public Node(int value) {
             this.value = value;
@@ -65,6 +66,28 @@ public class LinkList {
             tail.next = node;
             tail = node;
         }
+        size++;
+    }
+    public void insertAtPos(int pos ,int value){
+        Node node = new Node(value);
+        if(pos == 0){
+            insertAtFirst(value);
+
+            return;
+        }
+        if(pos == size - 1){
+            insertAtLast(value);
+            return;
+        }
+        //Node temp = new Node();
+        Node temp = new Node();
+                temp = head ;
+        for (int i = 0; i <pos-1 ; i++) {
+            temp= temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+        size++;
     }
 
 }
