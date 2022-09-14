@@ -12,5 +12,7 @@ public class Main {
         list.insertAtFirst(7);
 
         list.displayList();
+        list.insertAtLast(25);
+        list.displayList();
     }
 }

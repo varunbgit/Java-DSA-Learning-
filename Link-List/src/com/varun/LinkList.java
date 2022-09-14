@@ -57,6 +57,14 @@ public class LinkList {
         System.out.println("End");
     }
 
-
+    public void insertAtLast(int value){
+        if(tail == null ){
+            insertAtFirst(value);
+        }else {
+            Node node = new Node(value);
+            tail.next = node;
+            tail = node;
+        }
+    }
 
 }
