@@ -117,18 +117,20 @@ public class LinkList {
         size--;
         return value;
     }
-//    public int deletePos(int index,int value){
-//        if(index==1){
-//            return deletefirst();
-//        }
-//        if(index == size -1){
-//            return deletelast();
-//        }
-//
-//
-//
-//        size--;
-//    }
+
+    public int deletePos(int index){
+        if(index==1){
+            return deletefirst();
+        }
+        if(index == size -1){
+            return deletelast();
+        }
+        Node node = get(index-1);
+        int value = node.next.value;
+        node.next = node.next.next;
+        size--;
+        return value;
+    }
 
 
 
