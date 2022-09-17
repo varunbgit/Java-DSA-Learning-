@@ -11,12 +11,15 @@ public class Main {
         list.insertAtFirst(8);
         list.insertAtFirst(7);
 
+//        list.displayList();
+//        list.insertAtLast(25);
+//        list.displayList();
+//        list.insertAtPos(3,7);
+//        list.displayList();
+//        list.deletefirst();
         list.displayList();
-        list.insertAtLast(25);
+        System.out.println(list.deletelast());
         list.displayList();
-        list.insertAtPos(3,7);
-        list.displayList();
-        list.deletefirst();
-        list.displayList();
+
     }
 }

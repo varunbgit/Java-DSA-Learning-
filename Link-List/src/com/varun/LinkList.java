@@ -95,7 +95,7 @@ public class LinkList {
     public Node get(int index){
         Node node = new Node();
         node =head;
-        for (int i = 0; i < index-1; i++) {
+        for (int i = 0; i <= index-1; i++) {
             node = node.next;
         }
         return node;
@@ -109,7 +109,26 @@ public class LinkList {
         return value;
 
     }
-
+    public int deletelast(){
+        int value = tail.value;
+        Node prev = get(size-2);
+        tail=prev;
+       tail.next = null;
+        size--;
+        return value;
+    }
+//    public int deletePos(int index,int value){
+//        if(index==1){
+//            return deletefirst();
+//        }
+//        if(index == size -1){
+//            return deletelast();
+//        }
+//
+//
+//
+//        size--;
+//    }
 
 
 
