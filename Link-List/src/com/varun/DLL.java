@@ -78,6 +78,9 @@ public class DLL {
     }
 
     public void insertLast(int value){
+        if(head == null){
+            insertFirst(value;);
+        }
         Node node = new Node(value);
         Node last = head;
         while(last.next != null){
