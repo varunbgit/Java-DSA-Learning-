@@ -51,6 +51,21 @@ public class DLL {
         size++;
 
     }
+    Node last = null;
+
+    public void display(){
+        Node temp = new Node();
+        temp = head;
+
+        while(temp != null){
+            System.out.print(temp.value + "->");
+            last = temp;
+            temp = temp.next;
+
+        }
+        System.out.println("END");
+
+    }
 
 
 }
