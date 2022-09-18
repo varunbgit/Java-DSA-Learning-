@@ -1,8 +1,11 @@
 package com.varun;
 
 public class DLL {
-    Node head;
-    int size =0;
+    private Node head;
+    private int size =0;
+
+    public DLL() {
+    }
 
     public DLL(Node head, int size) {
         this.head = head;
@@ -27,32 +30,26 @@ public class DLL {
             this.prev = prev;
         }
 
+    }
 
-        public void  insertFirst(int value){
-            Node node = new Node(value);
-            //if first node in list
-            if(head == null){
-                node.next = null;
-                node.prev = null;
-                head = node;
-
-            }
-            else {
-                // if this is not first node;
-                head.prev = node;
-                node.next = head;
-                node.prev = null;
-                head = node;
-            }
-            size++;
+    public void  insertFirst(int value){
+        Node node = new Node(value);
+        //if first node in list
+        if(head == null){
+            node.next = null;
+            node.prev = null;
+            head = node;
 
         }
-        public void display(){
-
+        else {
+            // if this is not first node;
+            head.prev = node;
+            node.next = head;
+            node.prev = null;
+            head = node;
         }
-        public void displayRev(){
+        size++;
 
-        }
     }
 
 
