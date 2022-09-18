@@ -66,6 +66,15 @@ public class DLL {
         System.out.println("END");
 
     }
+    public void displayRev(){
+        Node temp = new Node();
+        temp = last;
+        while(temp != null){
+            System.out.print(temp.value + " ->");
+            temp = temp.prev;
 
+        }
+        System.out.println("START");
+    }
 
 }
