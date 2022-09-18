@@ -78,10 +78,20 @@ public class DLL {
     }
 
     public void insertLast(int value){
-        if(head == null){
-            insertFirst(value;);
-        }
+
+//        if(head == null){
+//            insertFirst(value);
+//        }
+
         Node node = new Node(value);
+        //Approach 2
+        if(head == null){
+            //   insertFirst(value);
+            node.prev = null;
+            node.next = null;
+            head = node;
+        }
+
         Node last = head;
         while(last.next != null){
             last= last.next;
