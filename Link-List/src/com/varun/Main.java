@@ -40,6 +40,8 @@ public class Main {
         Dlist.display();
         System.out.println("");
         Dlist.displayRev();
+        Dlist.insertLast(14);
+        Dlist.display();
 
     }
 }

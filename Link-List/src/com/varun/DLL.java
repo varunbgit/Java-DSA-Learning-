@@ -77,4 +77,15 @@ public class DLL {
         System.out.println("START");
     }
 
+    public void insertLast(int value){
+        Node node = new Node(value);
+        Node last = head;
+        while(last.next != null){
+            last= last.next;
+        }
+        node.next = null;
+        last.next = node;
+        node.prev = node;
+        size ++;
+    }
 }
