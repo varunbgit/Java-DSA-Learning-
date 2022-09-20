@@ -108,5 +108,17 @@ public class DLL {
         }
         return node;
     }
-
+    public void insertPos(int index,int val){
+        if(index == size-1){
+            insertLast(val);
+        }
+        else {
+            Node node = new Node(val);
+            Node P = findNode(index);
+            node.prev = P;
+            node.next = P.next;
+            P.next = node;
+            node.next.prev = node;
+        }
+    }
 }

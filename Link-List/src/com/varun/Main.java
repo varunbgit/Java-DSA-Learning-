@@ -42,8 +42,8 @@ public class Main {
         Dlist.displayRev();
         Dlist.insertLast(14);
         Dlist.display();
-//        Dlist.insertPos(3,7);
-//        Dlist.display();
+        Dlist.insertPos(3,7);
+        Dlist.display();
 
     }
 }
