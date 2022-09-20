@@ -113,8 +113,13 @@ public class DLL {
             insertLast(val);
         }
         else {
-            Node node = new Node(val);
+            //what if that node does'nt exist
             Node P = findNode(index);
+            if(P == null ){
+                System.out.println("Node Doesn't exists, please try again");
+                return;
+            }
+            Node node = new Node(val);
             node.prev = P;
             node.next = P.next;
             P.next = node;
