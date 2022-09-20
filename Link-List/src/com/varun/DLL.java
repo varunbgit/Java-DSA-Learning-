@@ -101,4 +101,12 @@ public class DLL {
         node.prev = node;
         size ++;
     }
+    private Node findNode(int index){
+        Node node = head;
+        for (int i = 0; i <index-1 ; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
 }
