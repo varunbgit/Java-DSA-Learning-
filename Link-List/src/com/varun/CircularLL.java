@@ -44,4 +44,12 @@ public class CircularLL {
         }
         size++;
     }
+
+    public void displayList(){
+        System.out.println("Start");
+        while(tail.next!=head){
+            System.out.println(head.value + " -> ");
+        }
+        System.out.println("END");
+    }
 }
