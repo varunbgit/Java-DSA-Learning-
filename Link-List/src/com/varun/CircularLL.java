@@ -1,7 +1,7 @@
 package com.varun;
 
 public class CircularLL {
-    Node head;`
+    Node head;
     Node tail;
     int size;
 
@@ -32,24 +32,49 @@ public class CircularLL {
             this.value = value;
         }
     }
-    public void insertAtFirst(int value){
-        Node node = new Node(value);
+//    public void insertAtFirst(int value){
+//        Node node = new Node(value);
+//        if(head == null){
+//            head = node;
+//            tail = node;
+//            node.next = null;
+//        }
+//        else{
+//            tail.next = node;
+//            node.next = head;
+//            head = node;
+//
+//
+//        }
+//        size++;
+//    }
+
+    public void insertAtLast(int value){
+        Node node  = new Node(value);
+        size++;
         if(head == null){
             head = node;
             tail = node;
+            head.next = node;
+            return;
         }
-        else{
-            node.next = head;
-            head = node;
-        }
-        size++;
+        tail.next = node;
+        node.next = head;
+        tail =node;
+
     }
 
     public void displayList(){
+        Node temp = head;
         System.out.println("Start");
-        while(tail.next!=head){
-            System.out.println(head.value + " -> ");
+        if(head!=null) {
+            do {
+                System.out.print(temp.value + "->");
+                temp = temp.next;
+            }
+            while(temp!=head);
+
+            }
+            System.out.println("END");
         }
-        System.out.println("END");
     }
-}

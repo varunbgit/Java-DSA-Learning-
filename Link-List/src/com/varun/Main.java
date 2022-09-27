@@ -31,19 +31,27 @@ public class Main {
 
         // DLL
 
-        DLL Dlist = new DLL();
-        Dlist.insertFirst(13);
-        Dlist.insertFirst(12);
-        Dlist.insertFirst(11);
-        Dlist.insertFirst(10);
-        Dlist.insertFirst(9);
-        Dlist.display();
-        System.out.println("");
-        Dlist.displayRev();
-        Dlist.insertLast(14);
-        Dlist.display();
-        Dlist.insertPos(3,7);
-        Dlist.display();
+//        DLL Dlist = new DLL();
+//        Dlist.insertFirst(13);
+//        Dlist.insertFirst(12);
+//        Dlist.insertFirst(11);
+//        Dlist.insertFirst(10);
+//        Dlist.insertFirst(9);
+//        Dlist.display();
+//        System.out.println("");
+//        Dlist.displayRev();
+//        Dlist.insertLast(14);
+//        Dlist.display();
+//        Dlist.insertPos(3,7);
+//        Dlist.display();
+
+        CircularLL cList = new CircularLL();
+        cList.insertAtLast(20);
+      //  cList.displayList();
+        cList.insertAtLast(10);
+        cList.insertAtLast(15);
+        cList.insertAtLast(30);
+        cList.displayList();
 
     }
 }
