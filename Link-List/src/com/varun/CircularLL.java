@@ -65,7 +65,7 @@ public class CircularLL {
 
     public void displayList(){
         Node temp = head;
-        System.out.println("Start");
+        System.out.print("Start" + "->");
         if(head!=null) {
             do {
                 System.out.print(temp.value + "->");
@@ -86,5 +86,20 @@ public class CircularLL {
             }
             head = head.next;
             tail.next = head;
+        }
+        public void  deleteLast(){
+            size--;
+            if(head == tail || head == null) {
+                head = null;
+                tail=null;
+                return;
+            }
+            Node temp  = head;
+            while(temp.next!=tail){
+                temp = temp.next;
+            }
+            tail = temp ;
+            tail.next = head;
+
         }
     }

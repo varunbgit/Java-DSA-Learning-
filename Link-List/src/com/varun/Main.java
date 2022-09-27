@@ -57,6 +57,8 @@ public class Main {
         cList.displayList();
         cList.deleteFirst();
         cList.displayList();
+        cList.deleteLast();
+        cList.displayList();
 
     }
 }
