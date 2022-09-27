@@ -32,22 +32,21 @@ public class CircularLL {
             this.value = value;
         }
     }
-//    public void insertAtFirst(int value){
-//        Node node = new Node(value);
-//        if(head == null){
-//            head = node;
-//            tail = node;
-//            node.next = null;
-//        }
-//        else{
-//            tail.next = node;
-//            node.next = head;
-//            head = node;
-//
-//
-//        }
-//        size++;
-//    }
+    public void insertAtFirst(int value){
+        Node node = new Node(value);
+        size++;
+        if(head == null){
+            head = node;
+            tail = node;
+            node.next = head;
+        }
+        else{
+            tail.next = node;
+            node.next = head;
+            head = node;
+        }
+
+    }
 
     public void insertAtLast(int value){
         Node node  = new Node(value);

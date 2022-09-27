@@ -47,10 +47,13 @@ public class Main {
 
         CircularLL cList = new CircularLL();
         cList.insertAtLast(20);
+        cList.insertAtFirst(11);
+        cList.insertAtFirst(12);
+        cList.insertAtFirst(13);
       //  cList.displayList();
-        cList.insertAtLast(10);
-        cList.insertAtLast(15);
-        cList.insertAtLast(30);
+//        cList.insertAtLast(10);
+//        cList.insertAtLast(15);
+//        cList.insertAtLast(30);
         cList.displayList();
 
     }
