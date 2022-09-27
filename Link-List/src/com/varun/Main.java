@@ -55,6 +55,8 @@ public class Main {
 //        cList.insertAtLast(15);
 //        cList.insertAtLast(30);
         cList.displayList();
+        cList.deleteFirst();
+        cList.displayList();
 
     }
 }

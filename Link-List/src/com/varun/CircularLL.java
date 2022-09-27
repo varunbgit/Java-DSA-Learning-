@@ -76,4 +76,15 @@ public class CircularLL {
             }
             System.out.println("END");
         }
+
+        public void  deleteFirst(){
+            size--;
+            if(head == tail || head == null) {
+                head = null;
+                tail=null;
+                return;
+            }
+            head = head.next;
+            tail.next = head;
+        }
     }
