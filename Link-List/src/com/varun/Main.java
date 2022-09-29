@@ -45,20 +45,35 @@ public class Main {
 //        Dlist.insertPos(3,7);
 //        Dlist.display();
 
-        CircularLL cList = new CircularLL();
-        cList.insertAtLast(20);
-        cList.insertAtFirst(11);
-        cList.insertAtFirst(12);
-        cList.insertAtFirst(13);
-      //  cList.displayList();
-//        cList.insertAtLast(10);
-//        cList.insertAtLast(15);
-//        cList.insertAtLast(30);
-        cList.displayList();
-        cList.deleteFirst();
-        cList.displayList();
-        cList.deleteLast();
-        cList.displayList();
+//        CircularLL cList = new CircularLL();
+//        cList.insertAtLast(20);
+//        cList.insertAtFirst(11);
+//        cList.insertAtFirst(12);
+//        cList.insertAtFirst(13);
+//      //  cList.displayList();
+////        cList.insertAtLast(10);
+////        cList.insertAtLast(15);
+////        cList.insertAtLast(30);
+//        cList.displayList();
+//        cList.deleteFirst();
+//        cList.displayList();
+//        cList.deleteLast();
+//        cList.displayList();
+
+        //Insertion using Recursion in Linked lIst
+
+        LinkList list = new LinkList();
+        list.insertAtFirst(13);
+        list.insertAtFirst(12);
+        list.insertAtFirst(11);
+        list.insertAtFirst(10);
+        list.insertAtFirst(9);
+        list.insertAtFirst(8);
+        list.insertAtFirst(7);
+        list.displayList();
+        list.insertRec(4,3);
+
+        list.displayList();
 
     }
 }

@@ -131,8 +131,19 @@ public class LinkList {
         size--;
         return value;
     }
+    public void insertRec(int v,int index){
+        head = insertRec(v,index,head);
+    }
+    private Node insertRec(int value,int  index,Node node){
+        if(index == 0){
+            Node temp  = new Node(value);
+            temp.next = node;
+            return temp;
+    }
 
-
+        node.next = insertRec(value,index-1,node.next);
+        return  node;
+    }
 
 
 }
