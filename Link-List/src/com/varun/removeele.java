@@ -29,3 +29,29 @@
 //
 //    }
 //}
+
+
+//Approach2
+//        if(head == null){
+//                return null;
+//                }
+//
+//                ListNode dummy = new ListNode();
+//                dummy.next = head;
+//                ListNode c = new ListNode();
+//                ListNode p = new ListNode();
+//                p=dummy;
+//                c=head;
+//
+//                while(c!=null){
+//                if(c.val == val){
+//                p.next = c.next;
+//                c=c.next;
+//                }else{
+//                p=p.next;
+//                c=c.next;
+//                }
+//                }
+//
+//                return dummy.next;
+
