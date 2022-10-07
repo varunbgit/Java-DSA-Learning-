@@ -47,4 +47,26 @@
 //            return anshead;
 //        }
 //    }
+
+// recursive approach
+
+// ListNode temp = new ListNode();
+//
+//public void  reverseLL(ListNode node,ListNode head){
+//
+//        if(node.next == null){
+//        head = node;
+//        head.next = null;
+//        temp = head;
+//        return;
+//        }
+//
+//        reverseLL(node.next,head);
+//
+//        temp.next = node;
+//        temp = node;
+//        temp.next = null;
+//        }
+
+
 //}
