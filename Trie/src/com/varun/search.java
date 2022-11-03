@@ -2,7 +2,7 @@ package com.varun;
 
 public class search {
     public boolean searchString(String key){
-        TrieNode root = new TrieNode();
+//        TrieNode root = new TrieNode();
         TrieNode curr = root;
         for (int i = 0; i < key.length(); i++) {
             int index = key.charAt(i) - 'a';
