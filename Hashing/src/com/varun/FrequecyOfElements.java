@@ -12,7 +12,9 @@ public class FrequecyOfElements {
         HashMap<Integer,Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length ; i++) {
             if(map.containsKey(arr[i]) ){
-                map.replace(arr[i],map.get(arr[i]),map.get(arr[i])+1);
+               // map.replace(arr[i],map.get(arr[i]),map.get(arr[i])+1);
+                map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+                //here get or default function get the val of given key is exists or else it takes by default value as 0 and then increment it by 1.
             }else{
                 map.put(arr[i],1);
             }
