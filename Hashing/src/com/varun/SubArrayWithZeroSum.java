@@ -8,7 +8,18 @@ public class SubArrayWithZeroSum {
         System.out.println(sum0exist(arr));
     }
     public static boolean sum0exist(int[] arr){
-
+//        ***Naive Solution***
+//        each ele acts a staring of a subset for a set
+        for (int i = 0; i <arr.length ; i++) {
+            int sum = 0;
+            for(int j = i;j< arr.length;j++){
+                sum = sum + arr[j];
+                if(sum==0){
+                    return true;
+                }
+            }
+        }
+        return false;
     
 //        ***Optimized solution***
 //        HashSet<Integer> set  = new HashSet<Integer>();
