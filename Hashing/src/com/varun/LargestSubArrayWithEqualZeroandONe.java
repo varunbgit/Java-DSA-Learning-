@@ -1,72 +1,50 @@
-package com.varun;
+// A Simple Java program to find longest common
+// subarray of two binary arrays with same sum
 
-import java.util.HashMap;
+class Test
+{
+    static int arr1[] = new int[]{0, 1, 0, 1, 1, 1, 1};
+    static int arr2[] = new int[]{1, 1, 1, 1, 1, 0, 1};
 
-public class LargestSubArrayWithEqualZeroandONe {
-    public static void main(String[] args) {
-        int maxLen(int arr[], int n)
+    // Returns length of the longest common sum in arr1[]
+    // and arr2[]. Both are of same size n.
+    static int longestCommonSum(int n)
+    {
+        // Initialize result
+        int maxLen = 0;
+
+        // One by one pick all possible starting points
+        // of subarrays
+        for (int i=0; i<n; i++)
         {
-            // Creates an empty hashMap hM
+            // Initialize sums of current subarrays
+            int sum1 = 0, sum2 = 0;
 
-            HashMap<Integer, Integer> hM
-                    = new HashMap<Integer, Integer>();
+            // Consider all points for starting with arr[i]
+            for (int j=i; j<n; j++)
+            {
+                // Update sums
+                sum1 += arr1[j];
+                sum2 += arr2[j];
 
-            // Initialize sum of elements
-            int sum = 0;
-
-            // Initialize result
-            int max_len = 0;
-            int ending_index = -1;
-            int start_index = 0;
-
-            for (int i = 0; i < n; i++) {
-                arr[i] = (arr[i] == 0) ? -1 : 1;
-            }
-
-            // Traverse through the given array
-
-            for (int i = 0; i < n; i++) {
-                // Add current element to sum
-
-                sum += arr[i];
-
-                // To handle sum=0 at last index
-
-                if (sum == 0) {
-                    max_len = i + 1;
-                    ending_index = i;
+                // If sums are same and current length is
+                // more than maxLen, update maxLen
+                if (sum1 == sum2)
+                {
+                    int len = j-i+1;
+                    if (len > maxLen)
+                        maxLen = len;
                 }
-
-                // If this sum is seen before,
-                // then update max_len if required
-                if (hM.containsKey(sum)) {
-                    if (max_len < i - hM.get(sum)) {
-                        max_len = i - hM.get(sum);
-                        ending_index = i;
-                    }
-                }
-                else // Else put this sum in hash table
-                    hM.put(sum, i);
             }
-
-            for (int i = 0; i < n; i++) {
-                arr[i] = (arr[i] == -1) ? 0 : 1;
-            }
-
-            int end = ending_index - max_len + 1;
-            System.out.println(end + " to " + ending_index);
-
-            return max_len;
         }
+        return maxLen;
+    }
 
-        /* Driver program to test the above functions */
-        public static void main(String[] args)
-        {
-            LargestSubArray1 sub = new LargestSubArray1();
-            int arr[] = { 1, 0, 0, 1, 0, 1, 1 };
-            int n = arr.length;
-
-            sub.maxLen(arr, n);
-        }
+    // Driver method to test the above function
+    public static void main(String[] args)
+    {
+        System.out.print("Length of the longest common span with same sum is ");
+        System.out.println(longestCommonSum(arr1.length));
     }
 }
+
