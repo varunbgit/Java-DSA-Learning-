@@ -2,8 +2,9 @@ package com.varun;
 
 public class MaximumSumSubArray {
     public static void main(String[] args) {
-        int [] arr = {-2,1,-3,4,-1,2,1,-5,4};
+        int [] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
         int sum = maxSubArray(arr);
+        System.out.println(sum);
     }
     public static int maxSubArray(int[] nums) {
         int max_so_far = Integer.MIN_VALUE;
@@ -13,7 +14,10 @@ public class MaximumSumSubArray {
             if(max_so_far<max_ending_here){
                 max_so_far = max_ending_here;
             }
-
+            if(max_ending_here<0){
+                max_ending_here = 0;
+            }
         }
+        return max_so_far;
     }
 }
