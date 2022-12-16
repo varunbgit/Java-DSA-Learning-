@@ -4,7 +4,8 @@ public class FrequenciesinSortedArray {
     public static void main(String[] args) {
 //        int [] arr ={10,10,10,25,30,30};
 //        int [] arr ={10,10,10};
-        int [] arr = {10,20,30};
+//        int [] arr = {10,20,30};
+        int [] arr ={40,50,50,50};
         findFreq(arr);
 
 
