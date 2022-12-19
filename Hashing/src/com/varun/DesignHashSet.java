@@ -6,8 +6,8 @@ import java.util.List;
 
 public class DesignHashSet {
     public static void main(String[] args) {
-        String[] str = ["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"];
-int []arr = {[], 1, 2, 1, 3, 2, 2, 2, 2}
+        String[] str = {"MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"};
+int []arr = {1, 2, 1, 3, 2, 2, 2, 2};
     }
 
 
