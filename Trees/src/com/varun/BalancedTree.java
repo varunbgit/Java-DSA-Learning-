@@ -20,7 +20,14 @@ public class BalancedTree {
         root.right.left = new Node(15);
         root.right.right = new Node(20);
 
-        System.out.println(isBalanced(root));
+//        System.out.println(isBalanced(root));
+        int ans = isBalanced1(root);
+        if(ans >0){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+
     }
 
     private static boolean isBalanced(Node root) {
@@ -39,4 +46,28 @@ public class BalancedTree {
         return 1 + heighttree(root.left) + heighttree(root.right);
     }
 
+    //optimized approach
+    private static int  isBalanced1(Node root) {
+        //return -1 if tree not balanced
+        //return +ve val if tree is balanced
+        // this +ve value is its height
+
+        if(root == null){
+            return 0;
+        }
+        int lh = isBalanced1(root.left);
+        if(lh == -1){
+            return -1;
+        }
+        int rh = isBalanced1(root.right);
+        if(rh == -1){
+            return -1;
+        }
+        if(Math.abs(lh-rh)>1){
+            return -1;
+        }
+        else{
+            return 1 + Math.max(lh,rh);
+        }
+    }
 }
