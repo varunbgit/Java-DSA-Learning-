@@ -17,7 +17,7 @@ public class MaxmimumValInTree {
 
         public static void main(String args[])
         {
-            Node root=new Node(20);
+            Node root=new Node(200);
             root.left=new Node(80);
             root.right=new Node(30);
             root.right.left=new Node(40);
@@ -31,7 +31,7 @@ public class MaxmimumValInTree {
             return Integer.MIN_VALUE;
         }
         int maxVal = root.key;
-        maxVal=Math.max(root.left.key,root.right.key);
+        maxVal=Math.max(maxVal,Math.max(root.left.key,root.right.key));
         return maxVal;
     }
 
