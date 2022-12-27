@@ -1,5 +1,5 @@
 package com.varun;
-
+//lc 14 : https://leetcode.com/problems/longest-common-prefix/description/
 public class LongestCommonPrefix {
     public static void main(String[] args) {
         String [] str  = {"ab", "a"};
