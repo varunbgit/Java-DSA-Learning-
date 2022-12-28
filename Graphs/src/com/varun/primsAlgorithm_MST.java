@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class primsAlgorithm_MST {
 
-    public  class Pair{
+    public static class Pair{
         int node ;
         int distance ;
 
