@@ -18,7 +18,7 @@ public class BellmanFordAlgo {
                 int src = list.get(0);
                 int destt = list.get(1);
                 int wt = list.get(2);
-                if (distance[u]!=(int )(1e8) && distance[destt] > distance[src] + wt) {
+                if (distance[src]!=(int )(1e8) && distance[destt] > distance[src] + wt) {
 
                     if((distance[src]!= (int)(1e9)) && (i == V))
                         return new int[]{-1}; // detecting a negative cycle
