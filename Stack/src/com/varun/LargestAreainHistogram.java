@@ -7,12 +7,12 @@ import java.util.Stack;
 public class LargestAreainHistogram {
     public static void main(String[] args) {
 //        int[] heights = {2,1,5,6,2,3};
-                int[] heights = {6,2,5,4,1,5,6};
-//        int ans  =
-                largestRectangleArea(heights);
-//        System.out.println(ans);
+//        int[] heights = {6,2,5,4,1,5,6};
+        int[] heights = {0,0};
+        int ans  =largestRectangleArea(heights);
+        System.out.println(ans);
     }
-    public static void largestRectangleArea(int[] heights) {
+    public static int  largestRectangleArea(int[] heights) {
         int res = 0 ;
         int[] pmin = new int[heights.length];
         int[] nmin = new int[heights.length];
@@ -28,7 +28,7 @@ public class LargestAreainHistogram {
                     pmin[i] = stP.peek();
                     break;
                 }
-                while (!stP.isEmpty() && heights[stP.peek()] > heights[i]) {
+                while (!stP.isEmpty() && heights[stP.peek()] >= heights[i]) {
                     stP.pop();
                 }
 
@@ -56,7 +56,7 @@ public class LargestAreainHistogram {
                     break;
                 }
 
-                while (!stN.isEmpty() && heights[stN.peek()] > heights[i]) {
+                while (!stN.isEmpty() && heights[stN.peek()] >= heights[i]) {
                     stN.pop();
                 }
 //                if(!stN.isEmpty() && heights[stN.peek()] > heights[i]){
@@ -71,7 +71,18 @@ public class LargestAreainHistogram {
 
         System.out.println("pmin is : " + Arrays.toString(pmin));
         System.out.println("nmin is : " + Arrays.toString(nmin));
-//        return res;
+//
+//
+//        //calculating the largest area
+
+        for (int i = 0; i <heights.length ; i++) {
+            int curr  = heights[i];
+            curr  += (i - pmin[i] -1)* heights[i] ;
+            curr  += (nmin[i] - i -1)* heights[i];
+            res = Math.max(res,curr);
+        }
+
+        return res;
     }
 }
 
