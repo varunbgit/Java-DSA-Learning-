@@ -6,10 +6,10 @@ import java.util.Stack;
 
 public class LargestAreainHistogram {
     public static void main(String[] args) {
-//        int[] heights = {2,1,5,6,2,3};
+        int[] heights = {2,1,5,6,2,3};
 //        int[] heights = {6,2,5,4,1,5,6};
-        int[] heights = {0,0};
-        int ans  =largestRectangleArea(heights);
+//        int[] heights = {0,0};
+        int ans  =largestRectangleArea2(heights);
         System.out.println(ans);
     }
     public static int  largestRectangleArea(int[] heights) {
@@ -80,6 +80,31 @@ public class LargestAreainHistogram {
             curr  += (i - pmin[i] -1)* heights[i] ;
             curr  += (nmin[i] - i -1)* heights[i];
             res = Math.max(res,curr);
+        }
+
+        return res;
+    }
+
+    //optimized approach
+
+    public static int  largestRectangleArea2(int[] heights) {
+        int n = heights.length;
+        Stack<Integer> st = new Stack<>();
+        int res =0 ;
+        for (int i = 0; i <n ; i++) {
+            while(!st.isEmpty() && heights[i]<= heights[st.peek()]){
+                int tp = st.pop();
+                int curr = heights[tp] * (st.isEmpty()? i : (i-st.peek() -1) );
+                res  = Math.max(curr,res);
+            }
+            st.push(i);
+        }
+        // for the ones remaining in the stack
+
+        while(!st.isEmpty()){
+            int tp = st.pop();
+            int curr = heights[tp] * (st.isEmpty() ? n : n-st.peek() -1);
+            res  = Math.max(curr,res);
         }
 
         return res;
