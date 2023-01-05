@@ -48,5 +48,36 @@ public class sortArraysof012 {
     }
 
 
+//optimized Solution
 
+    public static void sortColors(int[] nums) {
+        int n = nums.length;
+        int low = 0;
+        int mid = 0;
+        int high = n-1;
+
+        while(mid >= low && mid <= high){
+            if(nums[mid] == 1){
+                mid++;
+            }
+            else if(nums[mid] == 0){
+                swap(nums,mid,low);
+                low++;
+                mid++;
+            }
+            else{
+                swap(nums,mid,high);
+                high--;
+            }
+        }
+    }
+
+    public static void swap(int [] nums,int curr ,int index) {
+        if (curr == index || nums[curr] == nums[index]) {
+            return;
+        }
+        int temp = nums[curr];
+        nums[curr] = nums[index];
+        nums[index] = temp;
+    }
 }
