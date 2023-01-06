@@ -1,5 +1,5 @@
 package com.varun;
-
+//https://www.codingninjas.com/codestudio/problems/count-inversions_615?leftPanelTab=0
 public class InversionOfArray {
     public static void main(String[] args) {
 //        long []arr = {2, 5, 1, 3, 4};
