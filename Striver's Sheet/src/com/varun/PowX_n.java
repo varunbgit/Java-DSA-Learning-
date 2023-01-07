@@ -44,4 +44,30 @@ public class PowX_n {
     }
 
 
+//    using recursion
+//            most optimized
+
+    public double myPow2(double x, int n) {
+
+        long  N = n;
+        if(n < 0){
+            x = 1/x;
+            N = -1 * n;         // this line is a edge case
+        }
+
+        return FastPow(x,N);
+
+    }
+    public double FastPow(double x, long n) {
+        if(n == 0){
+            return 1;
+        }
+
+        double half = FastPow(x,n/2);
+        if(n%2 == 0){
+            return half * half;
+        }
+        return  half * half * x;
+    }
+
 }
