@@ -11,24 +11,6 @@ public class MajorityElement_Ndivide2 {
          int ans = majorityElement(nums);
         System.out.println(ans );
     }
-    public static  int majorityElement(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int ele : nums){
-            if(map.containsKey(ele)){
-                map.put(ele , map.get(ele)+1);
-            }else{
-                map.put(ele,1);
-            }
-        }
-        System.out.println(map);
-        int ans = -1;
-        for(Map.Entry<Integer,Integer> en : map.entrySet()){
-            if(en.getValue() > nums.length/2){
-                ans = en.getKey();
-            }
-        }
-        return ans;
-    }
 
     //optimized Solution
 
@@ -50,5 +32,27 @@ public class MajorityElement_Ndivide2 {
         }
         return max;
     }
+
+
+    public static  int majorityElement(int[] nums) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int ele : nums){
+            if(map.containsKey(ele)){
+                map.put(ele , map.get(ele)+1);
+            }else{
+                map.put(ele,1);
+            }
+        }
+        System.out.println(map);
+        int ans = -1;
+        for(Map.Entry<Integer,Integer> en : map.entrySet()){
+            if(en.getValue() > nums.length/2){
+                ans = en.getKey();
+            }
+        }
+        return ans;
+    }
+
+
 }
 
