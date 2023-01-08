@@ -3,7 +3,7 @@ package com.varun;
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
 public class BestTimeTobuySellStocks {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         int [] prices = {7,1,5,3,6,4};
         //you are allowed to sell and buy only once.
         int ans = maxProfit(prices);
