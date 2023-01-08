@@ -1,4 +1,4 @@
-package com.varun.practice;
+package practice;
 
 import java.util.Arrays;
 
