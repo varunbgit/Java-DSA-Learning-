@@ -32,7 +32,8 @@ public class PrintInSpiralFormat {
             return ;
         }
         ArrayDeque<Node> queue = new ArrayDeque<>();
-
+//     ****** Do a simple BFS if reverse is true at last
+//     just reverse the list and then add it to ans  ******
         boolean reverse = false;
         Stack<Integer> stack = new Stack<>();
         queue.add(root);
